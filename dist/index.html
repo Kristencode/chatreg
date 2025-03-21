@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat UI with Profile, Contact, Timestamp & Send Icon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for the send icon -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 h-screen flex items-center justify-center">
+    <!-- Main Chat UI Container -->
+    <div
+      class="flex w-full max-w-4xl bg-white shadow-lg rounded-lg overflow-hidden"
+    >
+      <!-- Sidebar for User Profile and Contact List -->
+      <div
+        class="w-1/3 bg-blue-500 text-white p-6 flex flex-col justify-between"
+      >
+        <!-- User Profile -->
+        <div class="flex items-center space-x-4 mb-8">
+          <div class="w-16 h-16 bg-gray-300 rounded-full">
+            <img
+              class="w-16 h-16 rounded-full"
+              src="https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-6/482121554_9576987949059970_6623856274047078716_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEOFBhSSbr6ov79_gQVlgBpsJdtoOJkD2Wwl22g4mQPZTC5R3WntfCmIvziwZOrYPoeh8FVyoJAk15HjCdiJ30R&_nc_ohc=0OgQ_OzzhzMQ7kNvgF0JVga&_nc_oc=AdnwyJzj3Cvbicaz7l96KDVMGVQ5euFIom4JYnHicPuiyaBrRRWo3bYMsLhxc0eUQHY&_nc_zt=23&_nc_ht=scontent-los2-1.xx&_nc_gid=INvWlfbl_zbbFaM_xGr1rg&oh=00_AYFx56LYulqJQeQA7WPmup7nUYw173Pv9J9vYINdTnZsSw&oe=67E31777"
+              alt=""
+            />
+          </div>
+          <div>
+            <p id="user-name" class="font-semibold">Kristen</p>
+            <!-- User's name -->
+            <p class="text-sm" id="user-status">Online</p>
+          </div>
+        </div>
+
+        <!-- Contact List -->
+        <div>
+          <p class="font-semibold mb-2">Contacts</p>
+          <div class="space-y-4">
+            <!-- Contact -->
+            <div class="flex items-center space-x-2">
+              <div class="w-12 h-12 bg-gray-300 rounded-full"></div>
+              <div>
+                <p class="font-semibold text-sm">Dyelshak</p>
+                <p class="text-xs text-gray-300">Online</p>
+              </div>
+            </div>
+            <!-- Another Contact -->
+            <div class="flex items-center space-x-2">
+              <div class="w-12 h-12 bg-gray-300 rounded-full"></div>
+              <div>
+                <p class="font-semibold text-sm">Celine</p>
+                <p class="text-xs text-gray-300">Offline</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Section -->
+      <div class="flex-1 w-full bg-white shadow-lg rounded-lg overflow-hidden">
+        <!-- Chat Header -->
+        <div class="bg-blue-500 text-white text-center py-3 font-semibold">
+          Chat
+        </div>
+
+        <!-- Chat Messages -->
+        <div id="chat-container" class="h-80 overflow-y-auto p-4 space-y-4">
+          <!-- Messages will be displayed here -->
+        </div>
+
+        <!-- Message Input -->
+        <div class="border-t p-4 flex items-center">
+          <input
+            id="message-input"
+            type="text"
+            class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button id="send-btn" class="ml-4 text-blue-500 hover:text-blue-700">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
