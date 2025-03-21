@@ -102,11 +102,11 @@ function getCurrentUser() {
   return users.find((user) => user.email === email); // Find the user by email
 }
 
-// Function to display messages in chat container
+// using append function
 function displayMessage(username, message, isCurrentUser = false) {
   const chatContainer = document.getElementById("chat-container");
 
-  // Get the current time for the timestamp
+  //chats comes with time
   const timestamp = new Date().toLocaleTimeString();
 
   const messageElement = document.createElement("div");
@@ -132,59 +132,3 @@ function displayMessage(username, message, isCurrentUser = false) {
   chatContainer.appendChild(messageElement);
   chatContainer.scrollTop = chatContainer.scrollHeight;
 }
-
-// // handle sending messages
-// function sendMessage() {
-//   const messageInput = document.getElementById("message-input");
-//   const message = messageInput.value.trim();
-
-//   if (message === "") {
-//     return;
-//   }
-
-//   // Get the current user
-//   const user = getCurrentUser();
-//   const chatPartnerName = "John Doe"; // Replace with the name of the person you're chatting with
-
-//   if (user) {
-//     // Display the message from the current user
-//     displayMessage(user.username, message, true);
-//   }
-
-//   // Display the chat partner's response (just an example)
-//   setTimeout(() => {
-//     displayMessage(chatPartnerName, "This is a reply!", false);
-//   }, 1000);
-
-//   // Clear the message input field
-//   messageInput.value = "";
-// }
-
-// // Function to update the chat interface with user info and chat partner info
-// function updateChatInterface() {
-//   const user = getCurrentUser();
-
-//   // Update the left panel (profile section)
-//   if (user) {
-//     document.getElementById("username").innerText = user.username;
-//     // You can replace this with actual profile images based on user data
-//     document.getElementById("profile-image").src =
-//       "https://www.gravatar.com/avatar/" + md5(user.email);
-//   }
-
-//   // Update the chat header (person you are chatting with)
-//   const chatPartnerName = "John Doe"; // Replace this with actual chat partner name
-//   document.getElementById(
-//     "chat-header"
-//   ).innerText = `Chatting with ${chatPartnerName}`;
-// }
-
-// // Call updateChatInterface when the page is loaded
-// document.addEventListener("DOMContentLoaded", function () {
-//   updateChatInterface();
-
-//   // Add event listener for the send button
-//   if (document.getElementById("send-btn")) {
-//     document.getElementById("send-btn").addEventListener("click", sendMessage);
-//   }
-// });
