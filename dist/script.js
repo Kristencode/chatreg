@@ -70,7 +70,7 @@ function loginUser(event) {
   if (user) {
     localStorage.setItem("loggedInEmail", email);
     alert("Login successful! Enjoy your chats.");
-    window.location.href = "index.html";
+    window.location.href = "chat.html";
   } else {
     alert("Invalid email or password. Please recheck.");
   }
